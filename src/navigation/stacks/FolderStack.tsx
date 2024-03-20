@@ -1,11 +1,13 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import FolderScreen from '../../components/pages/FolderScreen'
-const Stack = createStackNavigator();
+import { FolderStackParamList } from '../../types/navigationTypes';
 
-export default function GalleryStack() {
+const FolderStack = createStackNavigator<FolderStackParamList>();
+
+export default function FolderStackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="FolderScreen" component={FolderScreen} />
-    </Stack.Navigator>
+    <FolderStack.Navigator>
+      <FolderStack.Screen name="FolderScreen" component={FolderScreen} />
+    </FolderStack.Navigator>
   );
 }

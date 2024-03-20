@@ -1,11 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import SettingScreen from '../../components/pages/SettingScreen'
-const Stack = createStackNavigator();
+import { SettingStackParamList } from '../../types/navigationTypes';
 
-export default function GalleryStack() {
+const SettingStack = createStackNavigator<SettingStackParamList>();
+
+export default function SettingStackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="SettingScreen" component={SettingScreen} />
-    </Stack.Navigator>
+    <SettingStack.Navigator>
+      <SettingStack.Screen name="Setting" component={SettingScreen} />
+      {/* Agrega aquí otros screens para el SettingStack */}
+    </SettingStack.Navigator>
   );
 }

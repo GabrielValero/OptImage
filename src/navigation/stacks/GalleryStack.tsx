@@ -1,11 +1,13 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import GalleryScreen from '../../components/pages/GalleryScreen'
-const Stack = createStackNavigator();
+import { GalleryStackParamList } from '../../types/navigationTypes';
 
-export default function GalleryStack() {
+const GalleryStack = createStackNavigator<GalleryStackParamList>();
+
+export default function GalleryStackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
-    </Stack.Navigator>
+    <GalleryStack.Navigator>
+      <GalleryStack.Screen name="Gallery" component={GalleryScreen} />
+    </GalleryStack.Navigator>
   );
 }
