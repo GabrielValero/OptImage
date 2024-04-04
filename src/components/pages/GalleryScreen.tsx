@@ -1,10 +1,12 @@
 import react from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import useMediaLibrary from '../../hooks/useMediaLibrary';
 
 export default function GalleryScreen(){
+    const {getImagesSortedByDate} = useMediaLibrary()
     return (
         <View style={styles.container}>
-            <Text>Gallery Screen</Text>
+            
         </View>
     );
 }

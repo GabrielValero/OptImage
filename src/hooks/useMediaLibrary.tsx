@@ -1,5 +1,6 @@
 import react, { useEffect } from 'react'
 import {requestPermissionsAsync, getAssetsAsync} from 'expo-media-library';
+import { Alert } from 'react-native';
 
 export default function useMediaLibrary(){
 
@@ -11,7 +12,10 @@ export default function useMediaLibrary(){
 
     const getImagesSortedByDate = async () => {
         // Solicitar permisos
-        isPermissionEnabled()
+        if(!isPermissionEnabled()) {
+          Alert.alert("Permisos", "Es necesario otorgar los permisos para usar la app")
+          return;
+        }
       
         try {
           // Obtener las imágenes
@@ -28,5 +32,6 @@ export default function useMediaLibrary(){
       };
     return {
         getImagesSortedByDate,
+        isPermissionEnabled
     }      
 }
